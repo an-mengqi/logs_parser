@@ -1,0 +1,52 @@
+{
+    "total_requests": 3216723,
+    "methods": {
+        "POST": 918794,
+        "GET": 2247848,
+        "PUT": 70,
+        "DELETE": 1,
+        "HEAD": 49971,
+        "CONNECT": 0,
+        "OPTIONS": 39,
+        "TRACE": 0
+    },
+    "top_ip": [
+        {
+            "top_first": [
+                "193.106.31.130",
+                235209
+            ],
+            "top_second": [
+                "198.50.156.189",
+                167812
+            ],
+            "top_third": [
+                "5.112.235.245",
+                166722
+            ]
+        }
+    ],
+    "top_longest": [
+        {
+            "method": "POST",
+            "url": "-",
+            "ip": "62.93.172.245",
+            "duration": 10000,
+            "date_time": "23/Dec/2015:07:27:57 +0100"
+        },
+        {
+            "method": "GET",
+            "url": "http://www.almhuette-raith.at/index.php?option=com_phocagallery&view=category&id=1&Itemid=53",
+            "ip": "213.162.68.113",
+            "duration": 10000,
+            "date_time": "06/Jan/2016:18:47:57 +0100"
+        },
+        {
+            "method": "GET",
+            "url": "http://www.almhuette-raith.at/index.php?option=com_phocagallery&view=category&id=1&Itemid=53",
+            "ip": "194.166.55.43",
+            "duration": 10000,
+            "date_time": "06/Jan/2016:21:29:02 +0100"
+        }
+    ]
+}
