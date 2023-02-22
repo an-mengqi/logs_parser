@@ -1,5 +1,6 @@
 import argparse
 import json
+import pathlib
 import re
 
 
@@ -110,13 +111,31 @@ if __name__ == '__main__':
                        )
     args = parse.parse_args()
 
-    requests_number = get_requests_number(args.path)
-    methods = get_methods_with_numbers(args.path)
-    ip = get_ip(args.path)
-    info = find_info(args.path)
+    if ".log" not in args.path:
+        desktop = pathlib.Path(args.path)
+        files = list(desktop.glob("*.log"))
+        json_content = []
+        for x in files:
+            full_path = str(x)
+            requests_number = get_requests_number(full_path)
+            methods = get_methods_with_numbers(full_path)
+            ip = get_ip(full_path)
+            info = find_info(full_path)
 
-    result = requests_number | methods | ip | info
+            result = requests_number | methods | ip | info
+            json_content.append(result)
 
-    json_data = json.dumps(result, indent=4)
-    with open('result.json', 'w') as f:
-        f.write(json_data)
+        json_data = json.dumps(json_content, indent=4)
+        with open('result.json', 'w') as f:
+            f.write(json_data)
+    else:
+        requests_number = get_requests_number(args.path)
+        methods = get_methods_with_numbers(args.path)
+        ip = get_ip(args.path)
+        info = find_info(args.path)
+
+        result = requests_number | methods | ip | info
+
+        json_data = json.dumps(result, indent=4)
+        with open('result.json', 'w') as f:
+            f.write(json_data)
